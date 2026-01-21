@@ -202,17 +202,22 @@ MEDIA QUERIES (DESKTOP ONLY)
 
     .banner {
         height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-
+    
     /* NAV */
     .nav-list {
+        display: flex;
         /* use flex to make adjust the navigation links */
     }
-
+    
     .nav-list li {
         border-bottom: none;
         border-right: 1px solid #EA85A3;
+        flex: 1;
         /* think about a flex property which can help you to adjust the size */
     }
 
@@ -222,33 +227,47 @@ MEDIA QUERIES (DESKTOP ONLY)
 
     /* CARDS */
     .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
         /* use grid here to create 3 columns */
     }
 
     .cards h2 {
+        grid-column: 1 / -1;
         /* use span or line numbering to make sure heading takes three columns */
     }
 
     /* NEWS – SAME AS YOUR ORIGINAL */
     .news {
-        /* Use grid to create two columns and use area to place the items */
-        
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 2rem;
+        /* Use grid to create two columns and use area to place the items */     
     }
 
     .news h2 {
+        grid-column: 1 / -1;
         /* name the area */
     }
 
     .news .left {
+        grid-row: 2 / 4;
         /* name the area */
     }
 
     .news .right {
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        gap: 1rem;
+        align-items: start;
         /* use grid to create two columns */
     }
 
     .news .right img {
-        
+        width: 100px;
+        height: 100px;
+        object-fit: cover;       
     }
 
     .copy {
